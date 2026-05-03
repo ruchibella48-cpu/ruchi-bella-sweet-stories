@@ -16,6 +16,12 @@ const Contact = () => {
     setTimeout(() => setSubmitted(false), 4000);
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
+  const socials = [
+  { name: "Instagram", url: "https://www.instagram.com/jmk_agro_industries_llp?igsh=MTc3cGh6c2k5NWZrcQ==" },
+  // { name: "Facebook", url: "https://facebook.com/your-page" },
+  // { name: "Twitter", url: "https://twitter.com/your-page" },
+  // { name: "LinkedIn", url: "https://linkedin.com/company/your-page" },
+];
 
   return (
     <div className="min-h-screen bg-background">
@@ -125,55 +131,95 @@ const Contact = () => {
             {/* Info */}
             <ScrollReveal direction="right">
               <div className="space-y-8">
-                <div>
-                  <h3 className="font-heading text-2xl text-foreground mb-6">Contact Information</h3>
-                  <div className="space-y-6">
-                    {[
-                      { icon: Mail, label: "Email", value: "hello@ruchibella.com" },
-                      { icon: Phone, label: "Phone", value: "+91 98765 43210" },
-                      { icon: MapPin, label: "Location", value: "Pune, Maharashtra, India" },
-                    ].map((item) => {
-                      const Icon = item.icon;
-                      return (
-                        <div key={item.label} className="flex items-start gap-4">
-                          <div className="w-12 h-12 rounded-full bg-jaggery-honey/15 flex items-center justify-center flex-shrink-0">
-                            <Icon size={20} className="text-jaggery-caramel" />
-                          </div>
-                          <div>
-                            <p className="font-body text-sm text-muted-foreground tracking-wide uppercase">{item.label}</p>
-                            <p className="font-body text-foreground">{item.value}</p>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
+  <div>
+    <h3 className="font-heading text-2xl text-foreground mb-6">
+      Contact Information
+    </h3>
 
-                {/* Bulk Enquiry */}
-                <div className="bg-card rounded-2xl p-8 shadow-warm">
-                  <h4 className="font-heading text-xl text-foreground mb-3">Bulk Enquiries</h4>
-                  <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">
-                    Looking for organic jaggery in bulk? We work with restaurants, cafés, bakeries, and retailers. Select "Bulk Enquiry" in the form subject or reach us directly.
-                  </p>
-                  <p className="font-body text-jaggery-caramel text-sm font-medium">bulk@ruchibella.com</p>
-                </div>
+    <div className="space-y-6">
+      {[
+        {
+          icon: Mail,
+          label: "Email",
+          value: "jmkagroindustriesllp69@gmail.com",
+          href: "mailto:jmkagroindustriesllp69@gmail.com",
+        },
+        {
+          icon: Phone,
+          label: "Phone",
+          value: "+91 8892495321",
+          href: "tel:+918892495321",
+        },
+        {
+          icon: MapPin,
+          label: "Location",
+          value: "Belgaum, Karnataka, India",
+        },
+      ].map((item) => {
+        const Icon = item.icon;
 
-                {/* Social */}
-                <div>
-                  <h4 className="font-heading text-lg text-foreground mb-4">Follow Us</h4>
-                  <div className="flex gap-4">
-                    {["Instagram", "Facebook", "Twitter", "LinkedIn"].map((social) => (
-                      <motion.span
-                        key={social}
-                        whileHover={{ y: -3 }}
-                        className="px-4 py-2 rounded-full bg-card border border-border text-muted-foreground font-body text-xs tracking-widest uppercase cursor-pointer hover:text-jaggery-caramel hover:border-jaggery-caramel transition-colors duration-300"
-                      >
-                        {social}
-                      </motion.span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+        return (
+          <div key={item.label} className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-full bg-jaggery-honey/15 flex items-center justify-center flex-shrink-0">
+              <Icon size={20} className="text-jaggery-caramel" />
+            </div>
+
+            <div>
+              <p className="font-body text-sm text-muted-foreground tracking-wide uppercase">
+                {item.label}
+              </p>
+
+              {item.href ? (
+                <a
+                  href={item.href}
+                  className="font-body text-foreground hover:text-jaggery-caramel transition-colors"
+                >
+                  {item.value}
+                </a>
+              ) : (
+                <p className="font-body text-foreground">{item.value}</p>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  {/* Bulk Enquiry */}
+  <div className="bg-card rounded-2xl p-8 shadow-warm">
+    <h4 className="font-heading text-xl text-foreground mb-3">
+      Bulk Enquiries
+    </h4>
+    <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">
+      Looking for organic jaggery in bulk? We work with restaurants, cafés,
+      bakeries, and retailers. Select "Bulk Enquiry" in the form subject or
+      reach us directly.
+    </p>
+  </div>
+
+  {/* Social */}
+  <div>
+    <h4 className="font-heading text-lg text-foreground mb-4">
+      Follow Us
+    </h4>
+
+    <div className="flex gap-4">
+      {socials.map((social) => (
+        <motion.a
+          key={social.name}
+          href={social.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ y: -3 }}
+          className="px-4 py-2 rounded-full bg-card border border-border text-muted-foreground font-body text-xs tracking-widest uppercase cursor-pointer hover:text-jaggery-caramel hover:border-jaggery-caramel transition-colors duration-300"
+        >
+          {social.name}
+        </motion.a>
+      ))}
+    </div>
+  </div>
+</div>
             </ScrollReveal>
           </div>
         </div>

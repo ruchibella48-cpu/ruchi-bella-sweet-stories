@@ -35,17 +35,33 @@ const Footer = () => {
 
           <div>
             <h4 className="font-heading text-jaggery-honey text-lg mb-4">Connect</h4>
-            <p className="text-jaggery-cream/60 font-body text-sm mb-2">hello@ruchibella.com</p>
-            <p className="text-jaggery-cream/60 font-body text-sm mb-4">+91 98765 43210</p>
+            {/* <p className="text-jaggery-cream/60 font-body text-sm mb-2">hello@ruchibella.com</p>
+            <p className="text-jaggery-cream/60 font-body text-sm mb-4">+91 98765 43210</p> */}
+                        <a
+              href="mailto:jmkagroindustriesllp69@gmail.com"
+              className="text-jaggery-cream/60 font-body text-sm mb-2 block hover:text-jaggery-honey transition-colors"
+            >
+              jmkagroindustriesllp69@gmail.com
+            </a>
+
+            <a
+              href="tel:+918892495321"
+              className="text-jaggery-cream/60 font-body text-sm mb-4 block hover:text-jaggery-honey transition-colors"
+            >
+              +91 8892495321
+            </a>
             <div className="flex gap-4">
-              {["Instagram", "Facebook", "Twitter"].map((social) => (
-                <span
-                  key={social}
-                  className="text-jaggery-cream/40 hover:text-jaggery-honey transition-colors duration-300 font-body text-xs tracking-widest uppercase cursor-pointer"
-                >
-                  {social}
-                </span>
-              ))}
+              {["Instagram"].map((social) => (
+              <a
+                key={social}
+                href="https://www.instagram.com/jmk_agro_industries_llp?igsh=MTc3cGh6c2k5NWZrcQ==" 
+                target="_blank"
+                rel="ruchi belalla social media"
+                className="text-jaggery-cream/40 hover:text-jaggery-honey transition-colors duration-300 font-body text-xs tracking-widest uppercase cursor-pointer"
+              >
+                {social}
+              </a>
+            ))}
             </div>
           </div>
         </div>

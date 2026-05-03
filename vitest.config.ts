@@ -4,6 +4,10 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
+
+  // 👇 ADD THIS LINE
+  base: "/ruchi-bella-sweet-stories/",
+
   test: {
     environment: "jsdom",
     globals: true,
